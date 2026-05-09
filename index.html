@@ -86,6 +86,15 @@ letter-spacing: 0.5em;
 color: #F5F0E8;
 text-decoration: none;
 position: relative;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 4px;
+}
+.nav-logo-img {
+width: 48px;
+height: auto;
+opacity: 0.9;
 }
 .nav-cta {
 font-size: 10px;
@@ -155,6 +164,19 @@ position: relative;
 .hero-title em {
 font-style: italic;
 color: #C9A84C;
+}
+
+.hero-slogan {
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+font-weight: 300;
+font-size: clamp(28px, 4vw, 48px);
+color: #C9A84C;
+letter-spacing: 0.08em;
+margin-top: 16px;
+text-align: center;
+opacity: 0;
+animation: fadeUp 1s ease 0.7s forwards;
 }
 
 .hero-subtitle {
@@ -694,6 +716,29 @@ color: #555550;
 letter-spacing: 0.1em;
 }
 
+/* ── FOOTER SUB ── */
+.footer-sub {
+padding: 16px 48px;
+border-top: 1px solid rgba(201,168,76,0.08);
+display: flex;
+justify-content: center;
+gap: 16px;
+align-items: center;
+}
+.footer-chef-link {
+font-size: 9px;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: #555550;
+text-decoration: none;
+border-bottom: 1px solid rgba(85,85,80,0.3);
+padding-bottom: 1px;
+transition: color 0.3s;
+cursor: pointer;
+}
+.footer-chef-link:hover { color: #C9A84C; }
+.footer-sep { color: #333330; font-size: 10px; }
+
 /* ── MODAL ── */
 .modal-overlay {
 display: none;
@@ -808,7 +853,10 @@ body { cursor: auto; }
 <!-- NAV -->
 
 <nav>
-  <a href="#" class="nav-logo">MATERA</a>
+  <a href="#" class="nav-logo">
+    MATERA
+    <img src="logo.png" alt="MATERA" class="nav-logo-img">
+  </a>
   <a href="#demande" class="nav-cta">Demander l'accès</a>
 </nav>
 
@@ -818,6 +866,7 @@ body { cursor: auto; }
   <div class="hero-bg"></div>
   <p class="hero-tag">Paris · Gastronomie Privée · Première en France</p>
   <h1 class="hero-title">MATERA</h1>
+  <p class="hero-slogan">À table !</p>
   <p class="hero-subtitle">Chefs Sélectionnés · Cercle Privé · Expérience sur Mesure</p>
   <div class="hero-divider"></div>
   <p class="hero-desc">Un chef d'exception arrive chez vous. Cuisine, dresse, et repart. Sans restaurant. Sans public. En toute discrétion.</p>
@@ -902,7 +951,7 @@ body { cursor: auto; }
 <section id="cercle">
   <div class="inner reveal">
     <p class="section-tag" style="text-align:center;">Accès</p>
-    <h2 class="section-title" style="text-align:center;">L'accès se mérite,<br><em>pas s'achète</em></h2>
+    <h2 class="section-title" style="text-align:center;">L'accès se mérite,<br><em>il ne s'achète pas</em></h2>
     <div class="gold-line" style="margin: 0 auto 32px;"></div>
     <div class="cercle-badge">Sélection sur dossier</div>
     <p>MATERA n'est pas une plateforme ouverte. Chaque demande est examinée personnellement. Nous choisissons nos clients avec autant de soin que nos chefs.</p>
@@ -1013,7 +1062,7 @@ body { cursor: auto; }
 
 <!-- DEVENIR CHEF -->
 
-<section id="devenir-chef">
+<section id="devenir-chef" style="display:none;">
   <div class="inner">
     <div class="reveal">
       <p class="section-tag">Rejoindre la maison</p>
@@ -1060,10 +1109,51 @@ body { cursor: auto; }
     <a href="#how">Le parcours</a>
     <a href="#chefs">Les chefs</a>
     <a href="#demande">Accès</a>
-    <a href="#devenir-chef">Rejoindre</a>
   </div>
   <p class="footer-copy">© 2026 MATERA · Paris · contact@materaprivatedining.fr</p>
 </footer>
+<div class="footer-sub">
+  <a class="footer-chef-link" onclick="document.getElementById('devenir-chef').style.display='block'; document.getElementById('devenir-chef').scrollIntoView({behavior:'smooth'}); return false;" href="#">Vous êtes chef ?</a>
+  <span class="footer-sep">·</span>
+  <a class="footer-chef-link" onclick="document.getElementById('mentionsModal').classList.add('active'); return false;" href="#">Mentions légales</a>
+</div>
+
+<!-- MENTIONS LÉGALES MODAL -->
+
+<div class="modal-overlay" id="mentionsModal">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('mentionsModal').classList.remove('active')">✕</button>
+    <p class="section-tag">Informations légales</p>
+    <h2 class="section-title" style="font-size:28px; margin-bottom:24px;">Mentions <em>légales</em></h2>
+
+```
+<div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.8; color:rgba(245,240,232,0.65);">
+
+  <p style="font-size:9px; letter-spacing:0.4em; text-transform:uppercase; color:#C9A84C; margin-bottom:8px;">Éditeur du site</p>
+  <p style="margin-bottom:24px;">MATERA Private Dining — Entreprise individuelle<br>
+  Siège social : Paris, France<br>
+  Contact : contact@materaprivatedining.fr</p>
+
+  <p style="font-size:9px; letter-spacing:0.4em; text-transform:uppercase; color:#C9A84C; margin-bottom:8px;">Hébergement</p>
+  <p style="margin-bottom:24px;">GitHub Pages — GitHub, Inc.<br>
+  88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis</p>
+
+  <p style="font-size:9px; letter-spacing:0.4em; text-transform:uppercase; color:#C9A84C; margin-bottom:8px;">Collecte des données personnelles</p>
+  <p style="margin-bottom:24px;">Les données collectées via le formulaire de demande d'accès (nom, prénom, email, téléphone) sont utilisées exclusivement dans le cadre de la qualification des demandes clients. Elles ne sont ni revendues, ni cédées à des tiers.</p>
+
+  <p style="font-size:9px; letter-spacing:0.4em; text-transform:uppercase; color:#C9A84C; margin-bottom:8px;">Durée de conservation</p>
+  <p style="margin-bottom:24px;">Les données sont conservées pour une durée maximale de 3 ans à compter de la dernière interaction. Passé ce délai, elles sont supprimées.</p>
+
+  <p style="font-size:9px; letter-spacing:0.4em; text-transform:uppercase; color:#C9A84C; margin-bottom:8px;">Vos droits (RGPD)</p>
+  <p style="margin-bottom:24px;">Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données. Pour exercer ces droits, contactez-nous à : contact@materaprivatedining.fr</p>
+
+  <p style="font-size:9px; letter-spacing:0.4em; text-transform:uppercase; color:#C9A84C; margin-bottom:8px;">Cookies</p>
+  <p>Ce site n'utilise pas de cookies de traçage ou publicitaires.</p>
+</div>
+```
+
+  </div>
+</div>
 
 <!-- MODAL CHEF -->
 
