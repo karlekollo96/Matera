@@ -1,1269 +1,550 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MATERA — Gastronomie Privée · Paris</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjMEEwQTBBIi8+CiAgPHRleHQgeD0iMTYiIHk9IjIzIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSIzMDAiIAogICAgICAgIGZpbGw9IiNDOUE4NEMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIxIj5NPC90ZXh0Pgo8L3N2Zz4=">
-<meta property="og:title" content="MATERA — Gastronomie Privée · Paris">
-<meta property="og:description" content="Un chef d'exception arrive chez vous. Cuisine, dresse, et repart. Sans restaurant. Sans public. En toute discrétion.">
-<meta property="og:image" content="https://materaprivatedining.fr/og-image.png">
+<title>MATERA — Private Dining · Saveurs Méditerranéennes</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjZmZmZmZmIi8+CiAgPHRleHQgeD0iMTYiIHk9IjI0IiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMjIiIGZvbnQtd2VpZ2h0PSI1MDAiIAogICAgICAgIGZpbGw9IiNFODYyMUEiIHN0cm9rZT0iIzVDNkIzQSIgc3Ryb2tlLXdpZHRoPSIwLjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk08L3RleHQ+Cjwvc3ZnPg==">
+<meta property="og:title" content="MATERA — Private Dining · Saveurs Méditerranéennes">
+<meta property="og:description" content="Un chef sélectionné. Votre maison. Une table méditerranéenne inoubliable.">
 <meta property="og:url" content="https://materaprivatedining.fr">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://materaprivatedining.fr/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --gold: #C9A84C;
-    --gold-light: #E8D5A3;
-    --dark: #0A0A0A;
-    --dark2: #111111;
-    --dark3: #1A1A1A;
-    --cream: #F5F0E8;
-    --cream2: #EDE6D6;
-    --grey: #888880;
-    --grey2: #555550;
-  }
-
-- { margin: 0; padding: 0; box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-background: #0A0A0A;
-color: #F5F0E8;
-font-family: ‘Montserrat’, sans-serif;
-font-weight: 300;
-overflow-x: hidden;
+:root {
+  --orange: #E8621A;
+  --olive: #5C6B3A;
+  --olive-light: #7A8E50;
+  --white: #ffffff;
+  --cream: #FAF8F4;
+  --dark: #1a1a14;
+  --grey: #888880;
+  --grey2: #555550;
+  --border: #e8e4dc;
 }
-
-/* ── CURSOR ── */
-body { cursor: none; }
-.cursor {
-position: fixed;
-width: 8px; height: 8px;
-background: #C9A84C;
-border-radius: 50%;
-pointer-events: none;
-z-index: 9999;
-transition: transform 0.15s ease;
-}
-.cursor-ring {
-position: fixed;
-width: 32px; height: 32px;
-border: 1px solid rgba(201,168,76,0.4);
-border-radius: 50%;
-pointer-events: none;
-z-index: 9998;
-transition: transform 0.35s ease, opacity 0.3s;
-}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--dark);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden;}
 
 /* ── NAV ── */
-nav {
-position: fixed; top: 0; left: 0; right: 0;
-z-index: 100;
-padding: 28px 48px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-mix-blend-mode: normal;
-}
-nav::before {
-content: ‘’;
-position: absolute; inset: 0;
-background: linear-gradient(to bottom, rgba(10,10,10,0.9), transparent);
-pointer-events: none;
-}
-.nav-logo {
-font-family: ‘Montserrat’, sans-serif;
-font-weight: 200;
-font-size: 18px;
-letter-spacing: 0.5em;
-color: #F5F0E8;
-text-decoration: none;
-position: relative;
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-gap: 4px;
-}
-.nav-logo-img {
-width: 48px;
-height: auto;
-opacity: 0.9;
-}
-.nav-cta {
-font-size: 10px;
-letter-spacing: 0.3em;
-text-transform: uppercase;
-color: #C9A84C;
-text-decoration: none;
-border-bottom: 1px solid #C9A84C;
-padding-bottom: 2px;
-position: relative;
-transition: color 0.3s, border-color 0.3s;
-}
-.nav-cta:hover { color: #E8D5A3; border-color: #E8D5A3; }
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:0.6px solid var(--border);}
+.nav-logo{display:flex;flex-direction:column;align-items:flex-start;gap:1px;text-decoration:none;}
+.nav-logo-word{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:24px;letter-spacing:0.3em;color:var(--orange);-webkit-text-stroke:0.9px var(--olive);text-transform:uppercase;line-height:1;}
+.nav-logo-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:9px;letter-spacing:0.28em;color:var(--olive);text-transform:uppercase;}
+
+/* Menu burger nav */
+.nav-menu-btn{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;}
+.nav-menu-btn span{display:block;width:22px;height:0.8px;background:var(--dark);transition:all 0.3s;}
+
+/* Dropdown nav */
+.nav-dropdown{position:absolute;top:100%;right:0;background:var(--white);border:0.6px solid var(--border);min-width:220px;display:none;flex-direction:column;box-shadow:0 20px 50px rgba(92,107,58,0.1);}
+.nav-dropdown.open{display:flex;}
+.nav-dropdown a{font-family:'Jost',sans-serif;font-weight:300;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--dark);text-decoration:none;padding:14px 24px;border-bottom:0.6px solid var(--border);transition:color 0.2s,background 0.2s;display:flex;align-items:center;gap:10px;}
+.nav-dropdown a:last-child{border-bottom:none;}
+.nav-dropdown a:hover{color:var(--orange);background:var(--cream);}
+.nav-dropdown a .nd-dot{width:4px;height:4px;background:var(--orange);border-radius:50%;flex-shrink:0;}
+.nav-right{position:relative;display:flex;align-items:center;gap:16px;}
+.nav-cta-reserve{font-family:'Jost',sans-serif;font-weight:300;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--white);background:var(--orange);padding:10px 22px;text-decoration:none;transition:background 0.25s;}
+.nav-cta-reserve:hover{background:var(--olive);}
 
 /* ── HERO ── */
-#hero {
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-position: relative;
-overflow: hidden;
-padding: 120px 48px 80px;
-}
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;overflow:hidden;padding:120px 48px 80px;background:var(--white);text-align:center;}
+.hero-bg{position:absolute;inset:0;opacity:0.03;background-image:radial-gradient(circle,var(--orange) 1px,transparent 1px),radial-gradient(circle,var(--olive) 1px,transparent 1px);background-size:48px 48px,72px 72px;background-position:0 0,24px 24px;}
+.hero-arc-left{position:absolute;left:-140px;top:50%;transform:translateY(-50%);width:480px;height:480px;border-radius:50%;border:0.8px solid var(--olive);opacity:0.1;pointer-events:none;}
+.hero-arc-right{position:absolute;right:-100px;top:50%;transform:translateY(-50%);width:360px;height:360px;border-radius:50%;border:0.8px solid var(--orange);opacity:0.08;pointer-events:none;}
+.hero-branch{width:280px;margin-bottom:28px;opacity:0.88;animation:fadeUp 1.2s ease both;}
+.hero-tag{font-family:'Jost',sans-serif;font-weight:200;font-size:10px;letter-spacing:0.45em;text-transform:uppercase;color:var(--olive);margin-bottom:20px;opacity:0;animation:fadeUp 1s ease 0.2s forwards;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(64px,11vw,128px);letter-spacing:0.15em;line-height:0.9;color:var(--orange);-webkit-text-stroke:1.8px var(--olive);opacity:0;animation:fadeUp 1.2s ease 0.35s forwards;}
+.hero-slogan{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(20px,3vw,34px);color:var(--olive);letter-spacing:0.1em;margin-top:14px;opacity:0;animation:fadeUp 1s ease 0.5s forwards;}
+.hero-divider{display:flex;align-items:center;gap:16px;margin:32px 0;opacity:0;animation:fadeUp 1s ease 0.65s forwards;}
+.hero-line{width:80px;height:0.6px;background:var(--olive);opacity:0.45;}
+.hero-diamond{width:6px;height:6px;background:var(--orange);transform:rotate(45deg);flex-shrink:0;}
+.hero-desc{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(17px,2.2vw,22px);color:var(--grey);max-width:520px;line-height:1.75;opacity:0;animation:fadeUp 1s ease 0.8s forwards;}
+.hero-cta-wrap{margin-top:48px;display:flex;gap:24px;align-items:center;opacity:0;animation:fadeUp 1s ease 1s forwards;}
+.btn-primary{display:inline-block;padding:14px 38px;background:var(--orange);color:var(--white);font-family:'Jost',sans-serif;font-size:10px;font-weight:400;letter-spacing:0.35em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background 0.25s,transform 0.2s;}
+.btn-primary:hover{background:var(--olive);transform:translateY(-1px);}
+.btn-secondary{font-family:'Jost',sans-serif;font-size:10px;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;color:var(--grey);text-decoration:none;border-bottom:0.6px solid var(--border);padding-bottom:2px;transition:color 0.3s;}
+.btn-secondary:hover{color:var(--olive);}
+.scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s ease 1.8s forwards;}
+.scroll-hint span{font-size:8px;letter-spacing:0.4em;text-transform:uppercase;color:var(--grey2);}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--olive),transparent);animation:scrollPulse 2s ease infinite;}
 
-.hero-bg {
-position: absolute; inset: 0;
-background:
-radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.04) 0%, transparent 70%),
-radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.03) 0%, transparent 60%);
-}
-
-.hero-lines {
-position: absolute; inset: 0;
-background-image:
-linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
-linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
-background-size: 80px 80px;
-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 70%);
-opacity: 0.4;
-}
-
-.hero-tag {
-font-size: 9px;
-letter-spacing: 0.5em;
-text-transform: uppercase;
-color: #C9A84C;
-margin-bottom: 40px;
-opacity: 0;
-animation: fadeUp 1s ease 0.3s forwards;
-}
-
-.hero-title {
-font-family: ‘Cormorant Garamond’, serif;
-font-weight: 300;
-font-size: clamp(56px, 10vw, 120px);
-letter-spacing: 0.15em;
-line-height: 1;
-text-align: center;
-color: #F5F0E8;
-opacity: 0;
-animation: fadeUp 1.2s ease 0.5s forwards;
-position: relative;
-}
-
-.hero-title em {
-font-style: italic;
-color: #C9A84C;
-}
-
-.hero-slogan {
-font-family: ‘Cormorant Garamond’, serif;
-font-style: italic;
-font-weight: 300;
-font-size: clamp(28px, 4vw, 48px);
-color: #C9A84C;
-letter-spacing: 0.08em;
-margin-top: 16px;
-text-align: center;
-opacity: 0;
-animation: fadeUp 1s ease 0.7s forwards;
-}
-
-.hero-subtitle {
-font-size: 11px;
-letter-spacing: 0.4em;
-text-transform: uppercase;
-color: #888880;
-margin-top: 28px;
-text-align: center;
-opacity: 0;
-animation: fadeUp 1s ease 0.8s forwards;
-}
-
-.hero-divider {
-width: 1px;
-height: 60px;
-background: linear-gradient(to bottom, #C9A84C, transparent);
-margin: 48px auto 0;
-opacity: 0;
-animation: fadeUp 1s ease 1.1s forwards;
-}
-
-.hero-desc {
-font-family: ‘Cormorant Garamond’, serif;
-font-weight: 300;
-font-size: clamp(18px, 2.5vw, 24px);
-text-align: center;
-color: rgba(245,240,232,0.65);
-max-width: 560px;
-line-height: 1.7;
-margin-top: 48px;
-opacity: 0;
-animation: fadeUp 1s ease 1.3s forwards;
-}
-
-.hero-cta-wrap {
-margin-top: 56px;
-display: flex;
-gap: 24px;
-align-items: center;
-opacity: 0;
-animation: fadeUp 1s ease 1.5s forwards;
-}
-
-.btn-primary {
-display: inline-block;
-padding: 16px 40px;
-background: #C9A84C;
-color: #0A0A0A;
-font-family: ‘Montserrat’, sans-serif;
-font-size: 10px;
-font-weight: 500;
-letter-spacing: 0.35em;
-text-transform: uppercase;
-text-decoration: none;
-transition: background 0.3s, transform 0.3s;
-cursor: none;
-}
-.btn-primary:hover {
-background: #E8D5A3;
-transform: translateY(-1px);
-}
-
-.btn-secondary {
-font-size: 10px;
-letter-spacing: 0.3em;
-text-transform: uppercase;
-color: #888880;
-text-decoration: none;
-border-bottom: 1px solid rgba(136,136,128,0.4);
-padding-bottom: 2px;
-transition: color 0.3s;
-cursor: none;
-}
-.btn-secondary:hover { color: #F5F0E8; }
-
-.scroll-hint {
-position: absolute;
-bottom: 40px;
-left: 50%;
-transform: translateX(-50%);
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 8px;
-opacity: 0;
-animation: fadeIn 1s ease 2s forwards;
-}
-.scroll-hint span {
-font-size: 8px;
-letter-spacing: 0.4em;
-text-transform: uppercase;
-color: #555550;
-}
-.scroll-line {
-width: 1px; height: 40px;
-background: linear-gradient(to bottom, #555550, transparent);
-animation: scrollPulse 2s ease infinite;
-}
-
-/* ── SECTION COMMON ── */
-section { padding: 120px 48px; }
-
-.section-tag {
-font-size: 9px;
-letter-spacing: 0.5em;
-text-transform: uppercase;
-color: #C9A84C;
-margin-bottom: 24px;
-}
-
-.section-title {
-font-family: ‘Cormorant Garamond’, serif;
-font-weight: 300;
-font-size: clamp(36px, 5vw, 64px);
-line-height: 1.1;
-color: #F5F0E8;
-margin-bottom: 32px;
-}
-
-.section-title em { font-style: italic; color: #C9A84C; }
-
-.gold-line {
-width: 48px; height: 1px;
-background: #C9A84C;
-margin-bottom: 32px;
-}
+/* ── SECTIONS COMMUNES ── */
+section{padding:100px 48px;}
+.section-tag{font-family:'Jost',sans-serif;font-weight:200;font-size:9px;letter-spacing:0.5em;text-transform:uppercase;color:var(--olive);margin-bottom:18px;display:flex;align-items:center;gap:12px;}
+.section-tag::after{content:'';display:block;width:36px;height:0.6px;background:var(--olive);opacity:0.5;}
+.section-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(32px,5vw,54px);line-height:1.1;color:var(--dark);margin-bottom:22px;}
+.section-title em{font-style:italic;color:var(--orange);-webkit-text-stroke:0.5px var(--olive);}
+.olive-line{width:36px;height:0.6px;background:var(--orange);margin-bottom:26px;}
 
 /* ── WHAT ── */
-#what {
-background: #111111;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 80px;
-align-items: center;
-max-width: 1200px;
-margin: 0 auto;
-border-top: 1px solid rgba(201,168,76,0.15);
-}
 
-.what-text p {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: clamp(18px, 2vw, 22px);
-line-height: 1.8;
-color: rgba(245,240,232,0.7);
-margin-bottom: 20px;
-}
-
-.what-cards {
-display: flex;
-flex-direction: column;
-gap: 2px;
-}
-
-.what-card {
-padding: 28px 32px;
-background: #1A1A1A;
-border-left: 1px solid rgba(201,168,76,0.2);
-transition: border-color 0.3s, background 0.3s;
-}
-
-.what-card:hover {
-border-color: #C9A84C;
-background: rgba(201,168,76,0.04);
-}
-
-.what-card-num {
-font-size: 9px;
-letter-spacing: 0.4em;
-color: #C9A84C;
-margin-bottom: 8px;
-font-family: ‘Montserrat’, sans-serif;
-}
-
-.what-card h3 {
-font-family: ‘Cormorant Garamond’, serif;
-font-weight: 400;
-font-size: 20px;
-color: #F5F0E8;
-margin-bottom: 6px;
-}
-
-.what-card p {
-font-size: 12px;
-line-height: 1.7;
-color: #888880;
-}
+/* ── MENU DU MOIS ── */
+#menu{background:var(--white);border-top:0.6px solid var(--border);}
+#menu .section-inner{max-width:960px;margin:0 auto;}
+.section-intro{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--grey);letter-spacing:0.06em;margin-bottom:48px;max-width:500px;line-height:1.8;}
+.menus-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.menu-card{background:var(--cream);border:0.6px solid var(--border);padding:36px 32px;position:relative;transition:transform 0.3s,box-shadow 0.3s;}
+.menu-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(92,107,58,0.07);}
+.menu-card-badge{position:absolute;top:-1px;right:26px;background:var(--orange);color:var(--white);font-family:'Jost',sans-serif;font-weight:200;font-size:9px;letter-spacing:0.28em;text-transform:uppercase;padding:5px 12px;}
+.menu-card-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:21px;color:var(--dark);letter-spacing:0.05em;margin-bottom:3px;}
+.menu-card-subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--olive);letter-spacing:0.1em;margin-bottom:22px;}
+.menu-divider{width:26px;height:0.6px;background:var(--orange);margin-bottom:20px;}
+.menu-course{margin-bottom:16px;}
+.menu-course-label{font-family:'Jost',sans-serif;font-weight:200;font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--olive);margin-bottom:3px;}
+.menu-course-dish{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:15px;color:var(--dark);}
+.menu-course-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--grey);margin-top:2px;}
+.menu-photo{width:100%;height:160px;object-fit:cover;margin-bottom:20px;display:block;}
+.menu-photo-placeholder{width:100%;height:160px;background:linear-gradient(135deg,#e8e4dc,#f0ebe2);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.menu-photo-placeholder span{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--grey);letter-spacing:0.1em;}
 
 /* ── HOW ── */
-#how {
-max-width: 1200px;
-margin: 0 auto;
-}
-
-.steps {
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-gap: 0;
-margin-top: 64px;
-position: relative;
-}
-
-.steps::before {
-content: ‘’;
-position: absolute;
-top: 20px; left: 10%; right: 10%;
-height: 1px;
-background: linear-gradient(to right, transparent, rgba(201,168,76,0.3) 20%, rgba(201,168,76,0.3) 80%, transparent);
-}
-
-.step {
-padding: 0 16px;
-text-align: center;
-}
-
-.step-num {
-width: 40px; height: 40px;
-border: 1px solid rgba(201,168,76,0.4);
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 16px;
-color: #C9A84C;
-margin: 0 auto 24px;
-background: #0A0A0A;
-position: relative;
-z-index: 1;
-transition: background 0.3s, border-color 0.3s;
-}
-
-.step:hover .step-num {
-background: rgba(201,168,76,0.1);
-border-color: #C9A84C;
-}
-
-.step h4 {
-font-family: ‘Cormorant Garamond’, serif;
-font-weight: 400;
-font-size: 18px;
-color: #F5F0E8;
-margin-bottom: 8px;
-}
-
-.step p {
-font-size: 11px;
-line-height: 1.7;
-color: #888880;
-}
 
 /* ── CERCLE ── */
-#cercle {
-background: #111111;
-border-top: 1px solid rgba(201,168,76,0.15);
-border-bottom: 1px solid rgba(201,168,76,0.15);
-text-align: center;
-}
-
-#cercle .inner {
-max-width: 680px;
-margin: 0 auto;
-}
-
-#cercle p {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: clamp(20px, 2.5vw, 26px);
-line-height: 1.7;
-color: rgba(245,240,232,0.7);
-margin-bottom: 48px;
-}
-
-.cercle-badge {
-display: inline-flex;
-align-items: center;
-gap: 12px;
-padding: 12px 28px;
-border: 1px solid rgba(201,168,76,0.3);
-font-size: 10px;
-letter-spacing: 0.3em;
-text-transform: uppercase;
-color: #C9A84C;
-margin-bottom: 48px;
-}
-
-.cercle-badge::before, .cercle-badge::after {
-content: ‘’;
-width: 20px; height: 1px;
-background: #C9A84C;
-opacity: 0.5;
-}
 
 /* ── CHEFS ── */
-#chefs {
-max-width: 1200px;
-margin: 0 auto;
-}
 
-.chefs-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 2px;
-margin-top: 64px;
-}
+/* ── FORM ── */
+#demande{background:var(--white);border-top:0.6px solid var(--border);}
+#demande .inner{max-width:700px;margin:0 auto;}
+.form-intro{font-family:'Cormorant Garamond',serif;font-size:clamp(16px,2vw,20px);line-height:1.85;color:var(--grey);margin-bottom:44px;}
+.form-group{margin-bottom:26px;}
+.form-label{display:block;font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--olive);margin-bottom:8px;}
+.form-input,.form-select,.form-textarea{width:100%;background:var(--cream);border:none;border-bottom:0.8px solid var(--border);padding:12px 0;color:var(--dark);font-family:'Jost',sans-serif;font-size:13px;font-weight:300;outline:none;transition:border-color 0.3s;appearance:none;}
+.form-input::placeholder,.form-textarea::placeholder{color:#bbb;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:14px;}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--orange);background:var(--white);}
+.form-select{background-color:var(--cream);color:var(--dark);}
+.form-select option{background:var(--white);color:var(--dark);}
+.form-textarea{resize:none;height:96px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+.form-submit{margin-top:36px;display:flex;align-items:center;gap:24px;}
+.form-note{font-size:10px;letter-spacing:0.1em;color:var(--grey2);line-height:1.6;}
 
-.chef-card {
-background: #111111;
-padding: 48px 36px;
-position: relative;
-overflow: hidden;
-transition: background 0.4s;
-}
 
-.chef-card::before {
-content: ‘’;
-position: absolute;
-bottom: 0; left: 0; right: 0;
-height: 2px;
-background: #C9A84C;
-transform: scaleX(0);
-transform-origin: left;
-transition: transform 0.4s ease;
-}
-
-.chef-card:hover::before { transform: scaleX(1); }
-.chef-card:hover { background: rgba(201,168,76,0.03); }
-
-.chef-level {
-font-size: 8px;
-letter-spacing: 0.5em;
-text-transform: uppercase;
-color: #C9A84C;
-margin-bottom: 20px;
-}
-
-.chef-card h3 {
-font-family: ‘Cormorant Garamond’, serif;
-font-weight: 400;
-font-size: 28px;
-color: #F5F0E8;
-margin-bottom: 12px;
-}
-
-.chef-card p {
-font-size: 12px;
-line-height: 1.8;
-color: #888880;
-margin-bottom: 24px;
-}
-
-.chef-tag {
-display: inline-block;
-padding: 4px 12px;
-border: 1px solid rgba(201,168,76,0.2);
-font-size: 9px;
-letter-spacing: 0.3em;
-text-transform: uppercase;
-color: #C9A84C;
-}
-
-/* ── FORM SECTION ── */
-#demande {
-max-width: 760px;
-margin: 0 auto;
-}
-
-.form-intro {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: clamp(18px, 2vw, 22px);
-line-height: 1.8;
-color: rgba(245,240,232,0.65);
-margin-bottom: 56px;
-}
-
-.form-group {
-margin-bottom: 32px;
-}
-
-.form-label {
-display: block;
-font-size: 9px;
-letter-spacing: 0.4em;
-text-transform: uppercase;
-color: #C9A84C;
-margin-bottom: 10px;
-}
-
-.form-input, .form-select, .form-textarea {
-width: 100%;
-background: transparent;
-border: none;
-border-bottom: 1px solid rgba(201,168,76,0.25);
-padding: 14px 0;
-color: #F5F0E8;
-font-family: ‘Montserrat’, sans-serif;
-font-size: 13px;
-font-weight: 300;
-outline: none;
-transition: border-color 0.3s;
-appearance: none;
-cursor: none;
-}
-
-.form-input::placeholder, .form-textarea::placeholder {
-color: #555550;
-font-style: italic;
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 15px;
-}
-
-.form-input:focus, .form-select:focus, .form-textarea:focus {
-border-color: #C9A84C;
-}
-
-.form-select {
-background-color: transparent;
-color: #F5F0E8;
-}
-
-.form-select option {
-background: #1A1A1A;
-color: #F5F0E8;
-}
-
-.form-textarea {
-resize: none;
-height: 100px;
-}
-
-.form-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 32px;
-}
-
-.form-submit {
-margin-top: 48px;
-display: flex;
-align-items: center;
-gap: 32px;
-}
-
-.form-note {
-font-size: 10px;
-letter-spacing: 0.1em;
-color: #555550;
-line-height: 1.6;
-}
-
-/* ── CHEF SECTION ── */
-#devenir-chef {
-background: #111111;
-border-top: 1px solid rgba(201,168,76,0.15);
-}
-
-#devenir-chef .inner {
-max-width: 1200px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 80px;
-align-items: start;
-}
-
-.chef-prog {
-margin-top: 40px;
-}
-
-.prog-item {
-display: flex;
-gap: 24px;
-padding: 24px 0;
-border-bottom: 1px solid rgba(201,168,76,0.1);
-}
-
-.prog-item:last-child { border-bottom: none; }
-
-.prog-pct {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 32px;
-color: #C9A84C;
-min-width: 80px;
-line-height: 1;
-}
-
-.prog-info h4 {
-font-family: ‘Cormorant Garamond’, serif;
-font-weight: 400;
-font-size: 18px;
-color: #F5F0E8;
-margin-bottom: 4px;
-}
-
-.prog-info p {
-font-size: 11px;
-color: #888880;
-line-height: 1.6;
-}
 
 /* ── FOOTER ── */
-footer {
-padding: 48px;
-border-top: 1px solid rgba(201,168,76,0.15);
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
+footer{padding:36px 48px;border-top:0.6px solid var(--border);display:flex;flex-direction:column;align-items:center;gap:12px;background:var(--white);text-align:center;}
+.footer-logo-word{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:19px;letter-spacing:0.28em;color:var(--orange);-webkit-text-stroke:0.7px var(--olive);text-transform:uppercase;}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;}
+.footer-links a{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--grey);text-decoration:none;transition:color 0.3s;}
+.footer-links a:hover{color:var(--orange);}
+.footer-copy{font-size:10px;color:var(--grey2);letter-spacing:0.1em;}
+.footer-sub{padding:13px 48px;border-top:0.6px solid var(--border);display:flex;justify-content:center;gap:16px;align-items:center;}
+.footer-text-link{font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--grey2);text-decoration:none;border-bottom:0.6px solid var(--border);padding-bottom:1px;transition:color 0.3s;cursor:pointer;}
+.footer-text-link:hover{color:var(--orange);}
+.footer-sep{color:var(--border);font-size:10px;}
 
-.footer-logo {
-font-family: ‘Montserrat’, sans-serif;
-font-weight: 200;
-font-size: 14px;
-letter-spacing: 0.5em;
-color: #F5F0E8;
-}
+/* ── MODALS ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(255,255,255,0.94);z-index:1000;align-items:flex-start;justify-content:center;padding:80px 24px 40px;overflow-y:auto;}
+.modal-overlay.active{display:flex;}
+.modal{background:var(--white);border:0.6px solid var(--border);padding:52px;max-width:700px;width:100%;position:relative;box-shadow:0 30px 80px rgba(92,107,58,0.1);}
+.modal-close{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--grey);font-size:18px;cursor:pointer;transition:color 0.3s;}
+.modal-close:hover{color:var(--orange);}
+.form-success{display:none;text-align:center;padding:44px 0;}
+.form-success.active{display:block;}
+.form-success h3{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--orange);margin-bottom:12px;}
+.form-success p{font-size:13px;color:var(--grey);line-height:1.7;}
 
-.footer-links {
-display: flex;
-gap: 32px;
-}
+/* ── MODAL COLLECTION ── */
+.collection-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;margin-top:36px;}
+.collection-card{border:0.6px solid var(--border);overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;}
+.collection-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(92,107,58,0.08);}
+.collection-card-img{width:100%;height:180px;object-fit:cover;display:block;background:linear-gradient(135deg,var(--cream),#e8e4dc);}
+.collection-card-img-placeholder{width:100%;height:180px;background:linear-gradient(135deg,var(--cream),#ddd8cc);display:flex;align-items:center;justify-content:center;}
+.collection-card-img-placeholder span{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;color:var(--grey);}
+.collection-card-body{padding:22px 20px;}
+.collection-card-date{font-family:'Jost',sans-serif;font-weight:200;font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--olive);margin-bottom:5px;}
+.collection-card-name{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:18px;color:var(--dark);margin-bottom:3px;}
+.collection-card-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--grey);}
+.collection-empty{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--grey);text-align:center;padding:48px 0;letter-spacing:0.06em;}
 
-.footer-links a {
-font-size: 9px;
-letter-spacing: 0.3em;
-text-transform: uppercase;
-color: #888880;
-text-decoration: none;
-transition: color 0.3s;
-cursor: none;
-}
+/* ── MODAL MÉTÉO ── */
+.meteo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin-top:36px;}
+.meteo-card{background:var(--cream);border:0.6px solid var(--border);padding:24px 20px;text-align:center;transition:transform 0.2s;}
+.meteo-card:hover{transform:translateY(-2px);}
+.meteo-city{font-family:'Jost',sans-serif;font-weight:300;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--olive);margin-bottom:10px;}
 
-.footer-links a:hover { color: #C9A84C; }
+.meteo-temp{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:32px;color:var(--orange);line-height:1;}
+.meteo-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--grey);margin-top:5px;}
+.meteo-loading{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--grey);text-align:center;padding:32px 0;}
 
-.footer-copy {
-font-size: 10px;
-color: #555550;
-letter-spacing: 0.1em;
-}
+/* ── MODAL EXPÉRIENCE ── */
+.experience-text{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(17px,2vw,21px);line-height:2;color:var(--grey);margin-bottom:20px;}
+.experience-text em{color:var(--orange);font-style:italic;}
+.experience-divider{display:flex;align-items:center;gap:14px;margin:28px 0;}
+.experience-divider-line{flex:1;height:0.6px;background:var(--border);}
+.experience-divider-diamond{width:5px;height:5px;background:var(--orange);transform:rotate(45deg);}
+.experience-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2.5vw,26px);color:var(--dark);letter-spacing:0.04em;line-height:1.6;text-align:center;padding:24px 0;}
 
-/* ── FOOTER SUB ── */
-.footer-sub {
-padding: 16px 48px;
-border-top: 1px solid rgba(201,168,76,0.08);
-display: flex;
-justify-content: center;
-gap: 16px;
-align-items: center;
-}
-.footer-chef-link {
-font-size: 9px;
-letter-spacing: 0.25em;
-text-transform: uppercase;
-color: #555550;
-text-decoration: none;
-border-bottom: 1px solid rgba(85,85,80,0.3);
-padding-bottom: 1px;
-transition: color 0.3s;
-cursor: pointer;
-}
-.footer-chef-link:hover { color: #C9A84C; }
-.footer-sep { color: #333330; font-size: 10px; }
-
-/* ── MODAL ── */
-.modal-overlay {
-display: none;
-position: fixed; inset: 0;
-background: rgba(10,10,10,0.9);
-z-index: 1000;
-align-items: center;
-justify-content: center;
-padding: 24px;
-}
-
-.modal-overlay.active { display: flex; }
-
-.modal {
-background: #111111;
-border: 1px solid rgba(201,168,76,0.2);
-padding: 56px;
-max-width: 600px;
-width: 100%;
-max-height: 90vh;
-overflow-y: auto;
-position: relative;
-}
-
-.modal-close {
-position: absolute;
-top: 24px; right: 24px;
-background: none;
-border: none;
-color: #888880;
-font-size: 20px;
-cursor: none;
-transition: color 0.3s;
-}
-
-.modal-close:hover { color: #C9A84C; }
-
-/* ── SUCCESS ── */
-.form-success {
-display: none;
-text-align: center;
-padding: 48px 0;
-}
-
-.form-success.active { display: block; }
-
-.form-success h3 {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 32px;
-color: #C9A84C;
-margin-bottom: 16px;
-}
-
-.form-success p {
-font-size: 13px;
-color: #888880;
-line-height: 1.7;
-}
+/* ── EN COURS badge ── */
+.badge-coming{display:inline-block;padding:3px 10px;background:var(--cream);border:0.6px solid var(--border);font-family:'Jost',sans-serif;font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:var(--grey);margin-left:8px;vertical-align:middle;}
 
 /* ── ANIMATIONS ── */
-@keyframes fadeUp {
-from { opacity: 0; transform: translateY(24px); }
-to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-from { opacity: 0; }
-to   { opacity: 1; }
-}
-
-@keyframes scrollPulse {
-0%, 100% { opacity: 0.3; }
-50%       { opacity: 1; }
-}
-
-.reveal {
-opacity: 0;
-transform: translateY(32px);
-transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.visible {
-opacity: 1;
-transform: translateY(0);
-}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes scrollPulse{0%,100%{opacity:0.3;}50%{opacity:1;}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.8s ease,transform 0.8s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
 
 /* ── RESPONSIVE ── */
-@media (max-width: 768px) {
-nav { padding: 20px 24px; }
-section { padding: 80px 24px; }
-#what { grid-template-columns: 1fr; gap: 48px; padding: 80px 24px; }
-.steps { grid-template-columns: 1fr 1fr; gap: 32px; }
-.steps::before { display: none; }
-.chefs-grid { grid-template-columns: 1fr; }
-.form-grid { grid-template-columns: 1fr; }
-#devenir-chef .inner { grid-template-columns: 1fr; gap: 48px; }
-footer { flex-direction: column; gap: 24px; text-align: center; }
-.footer-links { flex-wrap: wrap; justify-content: center; }
-body { cursor: auto; }
-.cursor, .cursor-ring { display: none; }
-.btn-primary, .btn-secondary, .nav-cta, .footer-links a, .form-input, .form-select, .form-textarea { cursor: pointer; }
-.modal { padding: 32px 24px; }
+@media(max-width:768px){
+  nav{padding:14px 20px;}
+  section{padding:72px 22px;}
+  .menus-grid{grid-template-columns:1fr;}
+  .form-grid{grid-template-columns:1fr;}
+  footer{padding:28px 20px;}
+  .modal{padding:28px 18px;}
+  .meteo-grid{grid-template-columns:repeat(2,1fr);}
+  .collection-grid{grid-template-columns:1fr;}
+  .nav-logo-word{font-size:20px;}
 }
 </style>
-
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-
 <!-- NAV -->
-
 <nav>
   <a href="#" class="nav-logo">
-    MATERA
-    <img src="logo.png" alt="MATERA" class="nav-logo-img">
+    <span class="nav-logo-word">Matera</span>
+    <span class="nav-logo-sub">Private Dining</span>
   </a>
-  <a href="#demande" class="nav-cta">Demander l'accès</a>
+  <div class="nav-right">
+    <a href="#demande" class="nav-cta-reserve">Réserver</a>
+    <button class="nav-menu-btn" id="navMenuBtn" onclick="toggleNavMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-dropdown" id="navDropdown">
+      <a href="#" onclick="openModal('collectionModal');return false;"><span class="nd-dot"></span>Collections</a>
+      <a href="#" onclick="openModal('experienceModal');return false;"><span class="nd-dot"></span>L'Expérience</a>
+      <a href="#" onclick="openModal('partenairesModal');return false;"><span class="nd-dot"></span>Nos Partenaires <span class="badge-coming">Bientôt</span></a>
+      <a href="#" onclick="openModal('meteoModal');loadMeteo();return false;"><span class="nd-dot"></span>Météo Méditerranée</a>
+      <a href="#" onclick="openModal('confianceModal');return false;"><span class="nd-dot"></span>Ils nous ont fait confiance <span class="badge-coming">Bientôt</span></a>
+    </div>
+  </div>
 </nav>
 
 <!-- HERO -->
-
 <section id="hero">
   <div class="hero-bg"></div>
-  <p class="hero-tag">Paris · Gastronomie Privée · Première en France</p>
-  <h1 class="hero-title">MATERA</h1>
-  <p class="hero-slogan">À table !</p>
-  <p class="hero-subtitle">Chefs Sélectionnés · Cercle Privé · Expérience sur Mesure</p>
-  <div class="hero-divider"></div>
-  <p class="hero-desc">Un chef d'exception arrive chez vous. Cuisine, dresse, et repart. Sans restaurant. Sans public. En toute discrétion.</p>
+  <div class="hero-arc-left"></div>
+  <div class="hero-arc-right"></div>
+  <svg class="hero-branch" viewBox="0 0 400 70" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20,35 Q100,18 200,35 Q300,52 380,35" stroke="#5C6B3A" stroke-width="1.4" fill="none" opacity="0.7"/>
+    <ellipse cx="50" cy="24" rx="16" ry="6" fill="#5C6B3A" opacity="0.6" transform="rotate(-22,50,24)"/>
+    <ellipse cx="78" cy="18" rx="14" ry="5.5" fill="#7A8E50" opacity="0.52" transform="rotate(-14,78,18)"/>
+    <ellipse cx="108" cy="14" rx="15" ry="5.5" fill="#5C6B3A" opacity="0.58" transform="rotate(-8,108,14)"/>
+    <ellipse cx="38" cy="46" rx="14" ry="5.5" fill="#7A8E50" opacity="0.48" transform="rotate(20,38,46)"/>
+    <ellipse cx="68" cy="50" rx="13" ry="5" fill="#5C6B3A" opacity="0.48" transform="rotate(24,68,50)"/>
+    <circle cx="168" cy="28" r="5" fill="#E8621A" opacity="0.6"/>
+    <circle cx="192" cy="37" r="4.5" fill="#E8621A" opacity="0.55"/>
+    <circle cx="218" cy="30" r="5" fill="#E8621A" opacity="0.58"/>
+    <ellipse cx="248" cy="24" rx="16" ry="6" fill="#5C6B3A" opacity="0.6" transform="rotate(14,248,24)"/>
+    <ellipse cx="276" cy="18" rx="14" ry="5.5" fill="#7A8E50" opacity="0.52" transform="rotate(10,276,18)"/>
+    <ellipse cx="304" cy="14" rx="15" ry="5.5" fill="#5C6B3A" opacity="0.58" transform="rotate(7,304,14)"/>
+    <ellipse cx="258" cy="47" rx="13" ry="5" fill="#7A8E50" opacity="0.46" transform="rotate(-20,258,47)"/>
+    <ellipse cx="286" cy="50" rx="14" ry="5.5" fill="#5C6B3A" opacity="0.48" transform="rotate(-22,286,50)"/>
+    <ellipse cx="316" cy="48" rx="13" ry="5" fill="#7A8E50" opacity="0.44" transform="rotate(-16,316,48)"/>
+  </svg>
+  <p class="hero-tag">Saveurs méditerranéennes</p>
+  <h1 class="hero-title">À Table !</h1>
+  <p class="hero-slogan">Expérience sur mesure</p>
+  <div class="hero-divider">
+    <div class="hero-line"></div>
+    <div class="hero-diamond"></div>
+    <div class="hero-line"></div>
+  </div>
+  <p class="hero-desc">Un chef sélectionné. Votre maison. Une table méditerranéenne inoubliable.</p>
   <div class="hero-cta-wrap">
-    <a href="#demande" class="btn-primary">Demander l'accès</a>
-    <a href="#what" class="btn-secondary">Découvrir</a>
+    <a href="#demande" class="btn-primary">Réserver mon expérience</a>
   </div>
-  <div class="scroll-hint">
-    <div class="scroll-line"></div>
-    <span>Défiler</span>
-  </div>
+  <div class="scroll-hint"><div class="scroll-line"></div><span>Défiler</span></div>
 </section>
 
-<!-- WHAT -->
 
-<section id="what">
-  <div class="what-text reveal">
-    <p class="section-tag">Ce qu'est MATERA</p>
-    <h2 class="section-title">L'expérience privée <em>réinventée</em></h2>
-    <div class="gold-line"></div>
-    <p>MATERA est la première maison de gastronomie confidentielle en France. Nous orchestrons chaque expérience de A à Z, depuis la sélection du chef jusqu'au service à domicile.</p>
-    <p>Pas de réservation en ligne. Pas de catalogue ouvert. Chaque client est qualifié. Chaque chef est choisi.</p>
-  </div>
-  <div class="what-cards reveal">
-    <div class="what-card">
-      <p class="what-card-num">01</p>
-      <h3>Sélection</h3>
-      <p>Chefs issus des meilleures tables françaises. Accès réservé à une clientèle qualifiée. Cercle privé non public.</p>
-    </div>
-    <div class="what-card">
-      <p class="what-card-num">02</p>
-      <h3>Orchestration</h3>
-      <p>Nous gérons l'intégralité de l'expérience. De la qualification à l'attribution du chef, sans friction de votre côté.</p>
-    </div>
-    <div class="what-card">
-      <p class="what-card-num">03</p>
-      <h3>Discrétion</h3>
-      <p>Aucune trace publique. Confidentialité totale. Le chef arrive, cuisine et repart. L'adresse n'est jamais communiquée.</p>
-    </div>
-  </div>
-</section>
-
-<!-- HOW -->
-
-<section id="how">
-  <div class="reveal" style="text-align:center; max-width: 600px; margin: 0 auto 80px;">
-    <p class="section-tag">Le parcours</p>
-    <h2 class="section-title">Du premier contact <em>à l'expérience</em></h2>
-    <div class="gold-line" style="margin: 0 auto 0;"></div>
-  </div>
-  <div class="steps reveal">
-    <div class="step">
-      <div class="step-num">I</div>
-      <h4>Demande</h4>
-      <p>Vous soumettez une demande d'accès via notre formulaire confidentiel.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">II</div>
-      <h4>Qualification</h4>
-      <p>Un échange personnel pour comprendre votre occasion et vos attentes.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">III</div>
-      <h4>Validation</h4>
-      <p>Votre entrée dans le cercle privé est confirmée par nos équipes.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">IV</div>
-      <h4>Attribution</h4>
-      <p>Un chef est sélectionné selon votre profil, l'occasion et la date.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">V</div>
-      <h4>Expérience</h4>
-      <p>Le chef arrive chez vous. L'expérience commence. Le reste est silence.</p>
+<!-- MENU DU MOIS -->
+<section id="menu">
+  <div class="section-inner">
+    <p class="section-tag reveal">Menu du mois</p>
+    <h2 class="section-title reveal">Juin <em>2026</em></h2>
+    <p class="section-intro reveal">Entre tradition et modernité — des saveurs méditerranéennes revisitées avec exigence.</p>
+    <div class="menus-grid">
+      <div class="menu-card reveal">
+        <div class="menu-card-badge">Menu Adulte</div>
+        <div class="menu-photo-placeholder"><span>Photo du mois à venir</span></div>
+        <div class="menu-card-title">Méditerranée</div>
+        <div class="menu-card-subtitle">Entre terre et mer</div>
+        <div class="menu-divider"></div>
+        <div class="menu-course"><div class="menu-course-label">Entrée</div><div class="menu-course-dish">Crème de dattes & ricotta citronnée</div><div class="menu-course-desc">Pain maison, huile d'olive vierge, fleur de sel</div></div>
+        <div class="menu-course"><div class="menu-course-label">Plat</div><div class="menu-course-dish">Agneau confit aux épices ras el hanout</div><div class="menu-course-desc">Semoule dorée, grenade, coriandre fraîche</div></div>
+        <div class="menu-course"><div class="menu-course-label">Dessert</div><div class="menu-course-dish">Baklava déstructuré & glace miel de thym</div><div class="menu-course-desc">Pistaches de Bronte, eau de fleur d'oranger</div></div>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-card-badge" style="background:var(--olive);">Menu Enfant</div>
+        <div class="menu-photo-placeholder"><span>Photo du mois à venir</span></div>
+        <div class="menu-card-title">Petite Méditerranée</div>
+        <div class="menu-card-subtitle">Douceur & découverte</div>
+        <div class="menu-divider" style="background:var(--olive);"></div>
+        <div class="menu-course"><div class="menu-course-label">Entrée</div><div class="menu-course-dish">Houmous maison & légumes du soleil</div><div class="menu-course-desc">Carottes, concombre, pain pita tiède</div></div>
+        <div class="menu-course"><div class="menu-course-label">Plat</div><div class="menu-course-dish">Boulettes d'agneau sauce tomate douce</div><div class="menu-course-desc">Pâtes fraîches, parmesan, basilic</div></div>
+        <div class="menu-course"><div class="menu-course-label">Dessert</div><div class="menu-course-dish">Yaourt grec, miel d'acacia & fruits rouges</div><div class="menu-course-desc">Granola maison, menthe fraîche</div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CERCLE PRIVÉ -->
 
-<section id="cercle">
-  <div class="inner reveal">
-    <p class="section-tag" style="text-align:center;">Accès</p>
-    <h2 class="section-title" style="text-align:center;">L'accès se mérite,<br><em>il ne s'achète pas</em></h2>
-    <div class="gold-line" style="margin: 0 auto 32px;"></div>
-    <div class="cercle-badge">Sélection sur dossier</div>
-    <p>MATERA n'est pas une plateforme ouverte. Chaque demande est examinée personnellement. Nous choisissons nos clients avec autant de soin que nos chefs.</p>
-    <a href="#demande" class="btn-primary">Soumettre ma demande</a>
-  </div>
-</section>
 
-<!-- CHEFS -->
 
-<section id="chefs">
-  <div class="reveal" style="max-width: 600px;">
-    <p class="section-tag">Nos chefs</p>
-    <h2 class="section-title">Trois niveaux d'<em>excellence</em></h2>
-    <div class="gold-line"></div>
-  </div>
-  <div class="chefs-grid reveal">
-    <div class="chef-card">
-      <p class="chef-level">Niveau I</p>
-      <h3>Chef Associé</h3>
-      <p>Chefs talentueux en début de parcours MATERA. Cuisine créative, produits d'exception, exécution soignée.</p>
-      <span class="chef-tag">Point d'entrée</span>
-    </div>
-    <div class="chef-card">
-      <p class="chef-level">Niveau II</p>
-      <h3>Chef MATERA</h3>
-      <p>Confirmés sur au moins 10 expériences avec une note supérieure à 4,5/5. Signature personnelle affirmée.</p>
-      <span class="chef-tag">Expérience validée</span>
-    </div>
-    <div class="chef-card">
-      <p class="chef-level">Niveau III</p>
-      <h3>Chef Signature</h3>
-      <p>L'élite de la maison. Note supérieure à 4,8/5. Attributions en priorité sur les missions les plus exigeantes.</p>
-      <span class="chef-tag">Sommet de la maison</span>
-    </div>
-  </div>
-</section>
-
-<!-- DEMANDE D'ACCÈS -->
-
-<section id="demande">
-  <div class="reveal">
-    <p class="section-tag">Demande d'accès</p>
-    <h2 class="section-title">Entrer dans le <em>cercle</em></h2>
-    <div class="gold-line"></div>
-    <p class="form-intro">Chaque demande est examinée personnellement. Nous vous recontacterons dans les 48 heures pour un échange de qualification.</p>
-  </div>
-
+<!-- DEMANDE -->
+<section id="demande"><div class="inner">
+  <div class="reveal"><p class="section-tag">Votre expérience</p><h2 class="section-title">Réservez <em>votre table</em></h2><div class="olive-line"></div><p class="form-intro">Chaque détail compte. Notre équipe revient vers vous personnellement sous 24h.</p></div>
   <div id="formWrap" class="reveal">
     <form id="contactForm" action="https://formspree.io/f/xqenddyr" method="POST">
       <div class="form-grid">
-        <div class="form-group">
-          <label class="form-label" for="prenom">Prénom</label>
-          <input class="form-input" type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="nom">Nom</label>
-          <input class="form-input" type="text" id="nom" name="nom" placeholder="Votre nom" required>
-        </div>
+        <div class="form-group"><label class="form-label">Prénom</label><input class="form-input" type="text" name="prenom" placeholder="Votre prénom" required></div>
+        <div class="form-group"><label class="form-label">Nom</label><input class="form-input" type="text" name="nom" placeholder="Votre nom" required></div>
       </div>
       <div class="form-grid">
-        <div class="form-group">
-          <label class="form-label" for="email">Email</label>
-          <input class="form-input" type="email" id="email" name="email" placeholder="votre@email.com" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="tel">Téléphone</label>
-          <input class="form-input" type="tel" id="tel" name="telephone" placeholder="+33 6 …">
-        </div>
+        <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" name="email" placeholder="votre@email.com" required></div>
+        <div class="form-group"><label class="form-label">Téléphone</label><input class="form-input" type="tel" name="telephone" placeholder="+33 6 …"></div>
       </div>
       <div class="form-grid">
-        <div class="form-group">
-          <label class="form-label" for="occasion">Occasion</label>
-          <select class="form-select" id="occasion" name="occasion" required>
+        <div class="form-group"><label class="form-label">Date souhaitée</label><input class="form-input" type="date" name="date"></div>
+        <div class="form-group"><label class="form-label">Nombre de convives</label>
+          <select class="form-select" name="convives" required>
             <option value="" disabled selected>Sélectionner</option>
-            <option>Dîner privé</option>
-            <option>Événement d'entreprise</option>
-            <option>Célébration</option>
-            <option>Réception</option>
-            <option>Autre</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="convives">Nombre de convives</label>
-          <select class="form-select" id="convives" name="convives" required>
-            <option value="" disabled selected>Sélectionner</option>
-            <option>2 à 4 personnes</option>
-            <option>5 à 8 personnes</option>
-            <option>9 à 14 personnes</option>
-            <option>15 personnes et plus</option>
+            <option>2 personnes</option><option>3 – 4 personnes</option><option>5 – 6 personnes</option><option>7 – 10 personnes</option><option>10 – 15 personnes</option><option>15+ personnes</option>
           </select>
         </div>
       </div>
-      <div class="form-group">
-        <label class="form-label" for="message">Message (facultatif)</label>
-        <textarea class="form-textarea" id="message" name="message" placeholder="Précisez votre occasion, vos attentes…"></textarea>
+      <div class="form-group"><label class="form-label">Type d'occasion</label>
+        <select class="form-select" name="occasion" required>
+          <option value="" disabled selected>Sélectionner</option>
+          <option>Dîner privé</option><option>Anniversaire</option><option>Célébration</option><option>Dîner d'affaires</option><option>Autre</option>
+        </select>
       </div>
+      <div class="form-group"><label class="form-label">Message (facultatif)</label><textarea class="form-textarea" name="message" placeholder="Allergies, préférences, occasion particulière…"></textarea></div>
       <div class="form-submit">
-        <button type="submit" class="btn-primary">Soumettre la demande</button>
-        <p class="form-note">Réponse sous 48h · Discrétion absolue · Paris et région</p>
+        <button type="submit" class="btn-primary">Envoyer ma demande</button>
+        <p class="form-note">Réponse sous 24h · Discrétion garantie</p>
       </div>
     </form>
-    <div id="formSuccess" class="form-success">
-      <h3>Demande reçue.</h3>
-      <p>Nous vous recontacterons personnellement dans les 48 heures.<br>Merci de votre intérêt pour MATERA.</p>
-    </div>
+    <div id="formSuccess" class="form-success"><h3>Demande reçue.</h3><p>Notre équipe vous recontactera sous 24h.<br>Merci de votre intérêt pour MATERA.</p></div>
   </div>
-</section>
+</div></section>
 
-<!-- DEVENIR CHEF -->
 
-<section id="devenir-chef" style="display:none;">
-  <div class="inner">
-    <div class="reveal">
-      <p class="section-tag">Rejoindre la maison</p>
-      <h2 class="section-title">Devenir chef <em>MATERA</em></h2>
-      <div class="gold-line"></div>
-      <p style="font-family:'Cormorant Garamond',serif; font-size:18px; line-height:1.8; color:rgba(245,240,232,0.65); margin-bottom:32px;">
-        MATERA sélectionne des chefs d'exception pour offrir à une clientèle privée ce que les restaurants ne peuvent pas garantir — l'exclusivité totale.
-      </p>
-      <a href="#" onclick="document.getElementById('chefModal').classList.add('active'); return false;" class="btn-primary">Candidater</a>
-    </div>
-    <div class="chef-prog reveal">
-      <p style="font-size:9px; letter-spacing:0.4em; text-transform:uppercase; color:#C9A84C; margin-bottom:24px;">Progression & rémunération</p>
-      <div class="prog-item">
-        <div class="prog-pct">30%</div>
-        <div class="prog-info">
-          <h4>Chef Associé</h4>
-          <p>Point d'entrée dans la maison. Accès aux premières missions.</p>
-        </div>
-      </div>
-      <div class="prog-item">
-        <div class="prog-pct">40%</div>
-        <div class="prog-info">
-          <h4>Chef MATERA</h4>
-          <p>À partir de 10 expériences notées ≥ 4,5/5.</p>
-        </div>
-      </div>
-      <div class="prog-item">
-        <div class="prog-pct">50%</div>
-        <div class="prog-info">
-          <h4>Chef Signature</h4>
-          <p>Élite de la maison. Note ≥ 4,8/5. Missions premium en priorité.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- FOOTER -->
-
 <footer>
-  <div class="footer-logo">MATERA</div>
+  <div class="footer-logo-word">Matera</div>
   <div class="footer-links">
-    <a href="#what">La maison</a>
-    <a href="#how">Le parcours</a>
-    <a href="#chefs">Les chefs</a>
-    <a href="#demande">Accès</a>
+    <a href="#menu">Menu du mois</a>
+    <a href="#demande">Réserver</a>
   </div>
-  <p class="footer-copy">© 2026 MATERA · Paris · contact@materaprivatedining.fr</p>
+  <p class="footer-copy">© 2026 MATERA Private Dining</p>
+  <p class="footer-copy" style="font-size:9px;opacity:0.6;">contact@materaprivatedining.fr · Saveurs méditerranéennes</p>
 </footer>
 <div class="footer-sub">
-  <a class="footer-chef-link" onclick="document.getElementById('devenir-chef').style.display='block'; document.getElementById('devenir-chef').scrollIntoView({behavior:'smooth'}); return false;" href="#">Vous êtes chef ?</a>
-  <span class="footer-sep">·</span>
-  <a class="footer-chef-link" onclick="document.getElementById('mentionsModal').classList.add('active'); return false;" href="#">Mentions légales</a>
+  <a class="footer-text-link" onclick="openModal('mentionsModal');return false;" href="#">Mentions légales</a>
 </div>
 
-<!-- MENTIONS LÉGALES MODAL -->
+<!-- ═══════════════════════════════════════
+     MODALS
+════════════════════════════════════════ -->
 
-<div class="modal-overlay" id="mentionsModal">
-  <div class="modal">
-    <button class="modal-close" onclick="document.getElementById('mentionsModal').classList.remove('active')">✕</button>
-    <p class="section-tag">Informations légales</p>
-    <h2 class="section-title" style="font-size:28px; margin-bottom:24px;">Mentions <em>légales</em></h2>
-
-```
-<div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.8; color:rgba(245,240,232,0.65);">
-
-  <p style="font-size:9px; letter-spacing:0.4em; text-transform:uppercase; color:#C9A84C; margin-bottom:8px;">Éditeur du site</p>
-  <p style="margin-bottom:24px;">MATERA Private Dining — Entreprise individuelle<br>
-  Siège social : Paris, France<br>
-  Contact : contact@materaprivatedining.fr</p>
-
-  <p style="font-size:9px; letter-spacing:0.4em; text-transform:uppercase; color:#C9A84C; margin-bottom:8px;">Hébergement</p>
-  <p style="margin-bottom:24px;">GitHub Pages — GitHub, Inc.<br>
-  88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis</p>
-
-  <p style="font-size:9px; letter-spacing:0.4em; text-transform:uppercase; color:#C9A84C; margin-bottom:8px;">Collecte des données personnelles</p>
-  <p style="margin-bottom:24px;">Les données collectées via le formulaire de demande d'accès (nom, prénom, email, téléphone) sont utilisées exclusivement dans le cadre de la qualification des demandes clients. Elles ne sont ni revendues, ni cédées à des tiers.</p>
-
-  <p style="font-size:9px; letter-spacing:0.4em; text-transform:uppercase; color:#C9A84C; margin-bottom:8px;">Durée de conservation</p>
-  <p style="margin-bottom:24px;">Les données sont conservées pour une durée maximale de 3 ans à compter de la dernière interaction. Passé ce délai, elles sont supprimées.</p>
-
-  <p style="font-size:9px; letter-spacing:0.4em; text-transform:uppercase; color:#C9A84C; margin-bottom:8px;">Vos droits (RGPD)</p>
-  <p style="margin-bottom:24px;">Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données. Pour exercer ces droits, contactez-nous à : contact@materaprivatedining.fr</p>
-
-  <p style="font-size:9px; letter-spacing:0.4em; text-transform:uppercase; color:#C9A84C; margin-bottom:8px;">Cookies</p>
-  <p>Ce site n'utilise pas de cookies de traçage ou publicitaires.</p>
-</div>
-```
-
-  </div>
-</div>
-
-<!-- MODAL CHEF -->
-
-<div class="modal-overlay" id="chefModal">
-  <div class="modal">
-    <button class="modal-close" onclick="document.getElementById('chefModal').classList.remove('active')">✕</button>
-    <p class="section-tag">Candidature chef</p>
-    <h2 class="section-title" style="font-size:32px; margin-bottom:24px;">Rejoindre <em>la maison</em></h2>
-    <div id="chefFormWrap">
-      <form id="chefForm" action="https://formspree.io/f/xqenddyr" method="POST">
-        <input type="hidden" name="type" value="candidature-chef">
-        <div class="form-group">
-          <label class="form-label">Nom complet</label>
-          <input class="form-input" type="text" name="nom" placeholder="Votre nom" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Email</label>
-          <input class="form-input" type="email" name="email" placeholder="votre@email.com" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Téléphone</label>
-          <input class="form-input" type="tel" name="telephone" placeholder="+33 6 …">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Parcours & expérience</label>
-          <textarea class="form-textarea" name="parcours" placeholder="Tables, étoiles, spécialités…" style="height:80px;" required></textarea>
-        </div>
-        <div class="form-submit">
-          <button type="submit" class="btn-primary">Envoyer la candidature</button>
-        </div>
-      </form>
-      <div id="chefSuccess" class="form-success">
-        <h3>Candidature reçue.</h3>
-        <p>Nous étudions chaque dossier avec attention.<br>Réponse sous 5 jours ouvrés.</p>
-      </div>
+<!-- 1. COLLECTION -->
+<div class="modal-overlay" id="collectionModal">
+  <div class="modal" style="max-width:880px;">
+    <button class="modal-close" onclick="closeModal('collectionModal')"></button>
+    <p class="section-tag">Archive</p>
+    <h2 class="section-title" style="font-size:clamp(26px,4vw,42px);margin-bottom:8px;">Collections <em>MATERA</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--grey);margin-bottom:4px;">Chaque menu est une saison. Chaque saison, une mémoire.</p>
+    <div class="collection-grid" id="collectionGrid">
+      <!-- Les menus passés sont ajoutés ici mois par mois -->
+      <div class="collection-empty">Les premières collections apparaîtront dès juillet 2026.<br>Revenez nous voir.</div>
     </div>
   </div>
 </div>
 
-<script>
-// Cursor
-const cursor = document.getElementById('cursor');
-const ring   = document.getElementById('cursorRing');
-let mx = 0, my = 0, rx = 0, ry = 0;
+<!-- 2. L'EXPÉRIENCE -->
+<div class="modal-overlay" id="experienceModal">
+  <div class="modal" style="max-width:720px;">
+    <button class="modal-close" onclick="closeModal('experienceModal')"></button>
+    <p class="section-tag">Un voyage</p>
+    <h2 class="section-title" style="font-size:clamp(26px,4vw,44px);margin-bottom:28px;">L'<em>Expérience</em></h2>
 
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx - 4 + 'px';
-  cursor.style.top  = my - 4 + 'px';
+    <p class="experience-text">Il y a des lumières qu'on ne trouve nulle part ailleurs. La lumière de <em>Marseille</em> à l'heure où les cigales se taisent. Celle d'<em>Athènes</em> quand le soleil effleure le Parthénon au crépuscule. Et cette lumière particulière de <em>Beyrouth</em>, dorée et mélancolique, qui fait de chaque table une scène de théâtre.</p>
+
+    <div class="experience-divider"><div class="experience-divider-line"></div><div class="experience-divider-diamond"></div><div class="experience-divider-line"></div></div>
+
+    <p class="experience-text">La Méditerranée n'est pas une mer. C'est une façon de vivre. <em>La dolce vita</em> d'une terrasse toscane où le vin coule sans compter. La chaleur d'un souk marocain où les épices racontent des siècles d'histoire. L'amour grec de la table longue, bruyante, où personne ne part avant minuit.</p>
+
+    <div class="experience-quote">"Votre prochain voyage commence ici — dans votre propre maison."</div>
+
+    <div class="experience-divider"><div class="experience-divider-line"></div><div class="experience-divider-diamond"></div><div class="experience-divider-line"></div></div>
+
+    <p class="experience-text">MATERA apporte ce voyage jusqu'à vous. Un chef qui a traversé ces territoires, absorbé ces saveurs, compris que la vraie gastronomie méditerranéenne n'est pas une recette — c'est une <em>présence</em>. Celle du soleil dans l'assiette. De la mer dans chaque bouche. Du Sud dans chaque geste.</p>
+
+    <p class="experience-text">Ce soir-là, votre table sera la <em>Provence</em>. Demain, la <em>Grèce</em>. Après-demain, le <em>Liban</em>. Mais toujours chez vous. Toujours sur mesure. Toujours inoubliable.</p>
+  </div>
+</div>
+
+<!-- 3. PARTENAIRES -->
+<div class="modal-overlay" id="partenairesModal">
+  <div class="modal" style="max-width:680px;">
+    <button class="modal-close" onclick="closeModal('partenairesModal')"></button>
+    <p class="section-tag">Réseau</p>
+    <h2 class="section-title" style="font-size:clamp(26px,4vw,42px);margin-bottom:20px;">Nos <em>Partenaires</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--grey);line-height:1.8;margin-bottom:36px;">MATERA s'entoure de maisons partageant la même exigence. Producteurs, artisans, fournisseurs d'exception — chaque partenaire est sélectionné avec le même soin que nos chefs.</p>
+    <div style="display:flex;align-items:center;gap:14px;padding:28px 0;border-top:0.6px solid var(--border);border-bottom:0.6px solid var(--border);">
+      <div style="width:5px;height:5px;background:var(--orange);transform:rotate(45deg);flex-shrink:0;"></div>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--grey);letter-spacing:0.04em;">Les partenaires MATERA seront présentés à l'ouverture officielle — septembre 2026.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 4. MÉTÉO -->
+<div class="modal-overlay" id="meteoModal">
+  <div class="modal" style="max-width:760px;">
+    <button class="modal-close" onclick="closeModal('meteoModal')"></button>
+    <p class="section-tag">En ce moment</p>
+    <h2 class="section-title" style="font-size:clamp(24px,4vw,40px);margin-bottom:8px;">Météo <em>Méditerranée</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--grey);margin-bottom:4px;">Les villes qui nous inspirent, en temps réel.</p>
+    <div id="meteoGrid" class="meteo-grid">
+      <p class="meteo-loading">Chargement des températures…</p>
+    </div>
+  </div>
+</div>
+
+<!-- 5. ILS NOUS ONT FAIT CONFIANCE -->
+<div class="modal-overlay" id="confianceModal">
+  <div class="modal" style="max-width:680px;">
+    <button class="modal-close" onclick="closeModal('confianceModal')"></button>
+    <p class="section-tag">Références</p>
+    <h2 class="section-title" style="font-size:clamp(26px,4vw,42px);margin-bottom:20px;">Ils nous ont fait <em>confiance</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--grey);line-height:1.8;margin-bottom:36px;">La confiance se gagne expérience après expérience. Elle ne s'annonce pas — elle se mérite.</p>
+    <div style="display:flex;align-items:center;gap:14px;padding:28px 0;border-top:0.6px solid var(--border);border-bottom:0.6px solid var(--border);">
+      <div style="width:5px;height:5px;background:var(--orange);transform:rotate(45deg);flex-shrink:0;"></div>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--grey);letter-spacing:0.04em;">Les premiers témoignages seront partagés dès l'automne 2026.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- MENTIONS LÉGALES -->
+<div class="modal-overlay" id="mentionsModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('mentionsModal')"></button>
+    <p class="section-tag">Informations légales</p>
+    <h2 class="section-title" style="font-size:26px;margin-bottom:20px;">Mentions <em>légales</em></h2>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.85;color:var(--grey);">
+      <p style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--olive);margin-bottom:7px;">Éditeur du site</p>
+      <p style="margin-bottom:20px;">MATERA Private Dining — Entreprise individuelle<br>Siège social : Paris, France<br>Contact : contact@materaprivatedining.fr</p>
+      <p style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--olive);margin-bottom:7px;">Hébergement</p>
+      <p style="margin-bottom:20px;">GitHub Pages — GitHub, Inc.<br>88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis</p>
+      <p style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--olive);margin-bottom:7px;">Données personnelles</p>
+      <p style="margin-bottom:20px;">Les données collectées via le formulaire sont utilisées exclusivement pour la qualification des demandes. Elles ne sont ni revendues, ni cédées à des tiers.</p>
+      <p style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--olive);margin-bottom:7px;">Vos droits (RGPD)</p>
+      <p style="margin-bottom:20px;">Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression. Contact : contact@materaprivatedining.fr</p>
+      <p style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--olive);margin-bottom:7px;">Cookies</p>
+      <p>Ce site n'utilise pas de cookies de traçage ou publicitaires.</p>
+    </div>
+  </div>
+</div>
+
+
+<script>
+/* ── NAVIGATION DROPDOWN ── */
+function toggleNavMenu(){
+  const dd = document.getElementById('navDropdown');
+  dd.classList.toggle('open');
+}
+document.addEventListener('click', e => {
+  const nr = document.querySelector('.nav-right');
+  if(!nr.contains(e.target)) document.getElementById('navDropdown').classList.remove('open');
 });
 
-function animRing() {
-  rx += (mx - rx) * 0.12;
-  ry += (my - ry) * 0.12;
-  ring.style.left = rx - 16 + 'px';
-  ring.style.top  = ry - 16 + 'px';
-  requestAnimationFrame(animRing);
+/* ── MODALS ── */
+function openModal(id){
+  document.getElementById(id).classList.add('active');
+  document.getElementById('navDropdown').classList.remove('open');
 }
-animRing();
+function closeModal(id){ document.getElementById(id).classList.remove('active'); }
 
-// Scroll reveal
+// Fermer sur clic overlay
+document.querySelectorAll('.modal-overlay').forEach(o => {
+  o.addEventListener('click', e => { if(e.target===o) o.classList.remove('active'); });
+});
+
+/* ── MÉTÉO ── */
+// Villes méditerranéennes avec coordonnées (Open-Meteo, sans clé API)
+const cities = [
+  {name:'Marseille', lat:43.30,lon:5.37, flag:'FR'},
+  {name:'Nice',      lat:43.71,lon:7.26, flag:'FR'},
+  {name:'Rome',      lat:41.90,lon:12.49,flag:'IT'},
+  {name:'Barcelone', lat:41.39,lon:2.15, flag:'ES'},
+  {name:'Athènes',   lat:37.98,lon:23.73,flag:'GR'},
+  {name:'Istanbul',  lat:41.01,lon:28.97,flag:'TR'},
+  {name:'Beyrouth',  lat:33.89,lon:35.50,flag:'LB'},
+  {name:'Tunis',     lat:36.82,lon:10.17,flag:'TN'},
+  {name:'Marrakech', lat:31.63,lon:-7.99,flag:'MA'},
+  {name:'Alger',     lat:36.74,lon:3.06, flag:'DZ'},
+];
+
+const weatherIcons = {0:'Soleil',1:'Eclaircies',2:'Nuageux',3:'Couvert',45:'Brume',48:'Brume',51:'Averses',53:'Averses',55:'Pluie',61:'Pluie',63:'Pluie',65:'Pluie',71:'Neige',80:'Averses',95:'Orage'};
+const weatherDesc  = {0:'Ensoleillé',1:'Peu nuageux',2:'Nuageux',3:'Couvert',45:'Brumeux',51:'Bruine',61:'Pluie',71:'Neige',80:'Averses',95:'Orage'};
+
+let meteoLoaded = false;
+async function loadMeteo(){
+  if(meteoLoaded) return;
+  const grid = document.getElementById('meteoGrid');
+  grid.innerHTML = '<p class="meteo-loading">Chargement…</p>';
+  try {
+    const results = await Promise.all(cities.map(c =>
+      fetch(`https://api.open-meteo.com/v1/forecast?latitude=${c.lat}&longitude=${c.lon}&current_weather=true`)
+        .then(r=>r.json()).then(d=>({...c, temp:Math.round(d.current_weather.temperature), code:d.current_weather.weathercode}))
+        .catch(()=>({...c, temp:'—', code:null}))
+    ));
+    grid.innerHTML = results.map(c => `
+      <div class="meteo-card">
+        <div class="meteo-city">${c.flag} ${c.name}</div>
+        <span class="meteo-icon">${c.code!==null?(weatherIcons[c.code]||'-'):'-'}</span>
+        <div class="meteo-temp">${c.temp}${typeof c.temp==='number'?'°C':''}</div>
+        <div class="meteo-desc">${c.code!==null?(weatherDesc[c.code]||''):'Indisponible'}</div>
+      </div>`).join('');
+    meteoLoaded = true;
+  } catch {
+    grid.innerHTML = '<p class="meteo-loading">Données météo temporairement indisponibles.</p>';
+  }
+}
+
+/* ── SCROLL REVEAL ── */
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('visible');
+  entries.forEach((e,i) => {
+    if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*60); observer.unobserve(e.target); }
   });
-}, { threshold: 0.12 });
+}, {threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// Form — client
+/* ── FORM CLIENT ── */
 document.getElementById('contactForm').addEventListener('submit', async e => {
   e.preventDefault();
-  const form = e.target;
-  const data = new FormData(form);
   try {
-    const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-    if (res.ok) {
-      form.style.display = 'none';
-      document.getElementById('formSuccess').classList.add('active');
-    }
+    const res = await fetch(e.target.action,{method:'POST',body:new FormData(e.target),headers:{Accept:'application/json'}});
+    if(res.ok){e.target.style.display='none';document.getElementById('formSuccess').classList.add('active');}
   } catch {}
 });
 
-// Form — chef
-document.getElementById('chefForm').addEventListener('submit', async e => {
-  e.preventDefault();
-  const form = e.target;
-  const data = new FormData(form);
-  try {
-    const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-    if (res.ok) {
-      form.style.display = 'none';
-      document.getElementById('chefSuccess').classList.add('active');
-    }
-  } catch {}
-});
-
-// Close modal on overlay click
-document.getElementById('chefModal').addEventListener('click', function(e) {
-  if (e.target === this) this.classList.remove('active');
-});
-
-// Smooth scroll
+/* ── SMOOTH SCROLL ── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
   });
 });
 </script>
-
 </body>
 </html>
